@@ -1,6 +1,9 @@
 [package]
-name = "migration"
+name = "nanno-migrator"
 version = "0.1.0"
+description = "A tool for migrating data from other vn manager to Galkeeper"
 edition = "2021"
+authors = ["Arimura Sena"]
+license = "BAN-ZHINESE-USING"
 
 [dependencies]
