@@ -67,10 +67,13 @@ async fn main() -> Result<()> {
                     last_play = end_ts.max(last_play);
 
                     if start_ts > 0 && end_ts > 0 && duration > 0 {
-                        Some((start_ts / 1000, end_ts / 1000, duration / 1000));
+                        Some((start_ts / 1000, end_ts / 1000, duration / 1000))
+                    } else {
+                        None
                     }
+                } else {
+                    None
                 }
-                None
             })
             .collect();
 
@@ -78,7 +81,7 @@ async fn main() -> Result<()> {
             id: Uuid::new_v4().to_string(),
             vndb_id: None,
             bgm_id: None,
-            update_date: chrono::Utc::now().timestamp_millis(),
+            update_date: chrono::Utc::now().timestamp_millis() / 1000,
             title: name,
             alias: Vec::new(),
             cover: String::new(),
